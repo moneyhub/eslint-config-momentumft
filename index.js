@@ -7,6 +7,10 @@ module.exports = {
     "node": true
   },
 
+  "plugins": [
+    "babel"
+  ],
+
   "rules": {
 
     // Separate the rules into blocks based on what plugin they come from.
@@ -84,10 +88,10 @@ module.exports = {
 
     // ECMAScript 6
     "constructor-super": 2,
-    "generator-star-spacing": 2,
+    "babel/generator-star-spacing": 2,
     "no-this-before-super": 2,
     "no-var": 2,
-    "object-shorthand": 2,
+    "babel/object-shorthand": 2,
     "prefer-const": 2
 
   }
