@@ -1,0 +1,27 @@
+{
+  "name": "@mft/eslint-config-momentumft",
+  "version": "0.1.0",
+  "description": "Our ESLint configuration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/momentumft/eslint-config-momentumft.git"
+  },
+  "keywords": [
+    "eslint",
+    "config"
+  ],
+  "author": "Momentum Financial Technology",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/momentumft/eslint-config-momentumft/issues"
+  },
+  "homepage": "https://github.com/momentumft/eslint-config-momentumft#readme",
+  "peerDependencies": {
+    "babel-eslint": "^4.1.8",
+    "eslint": "^1.10.3"
+  }
+}
