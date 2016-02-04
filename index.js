@@ -88,7 +88,6 @@ module.exports = {
 
     // ECMAScript 6
     "constructor-super": 2,
-    "babel/generator-star-spacing": 2,
     "no-this-before-super": 2,
     "no-var": 2,
     "babel/object-shorthand": 2,
