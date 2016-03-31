@@ -52,13 +52,7 @@ module.exports = {
     "valid-jsdoc": [1, {
       "requireReturn": false,
       "requireReturnDescription": false,
-      "requireReturnType": false,
-      "preferType": {
-        "String": "String",
-        "Object": "Object",
-        "Array": "Array",
-        "Number": "Number"
-      }
+      "requireReturnType": false
     }], // Ensure JSDoc comments are valid
     "valid-typeof": 2, // Ensure that the results of typeof are compared against a valid string
 
