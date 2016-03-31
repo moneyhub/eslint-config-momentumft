@@ -49,7 +49,7 @@ module.exports = {
     "no-unused-vars": 2, // disallow declaration of variables that are not used in the code
     "no-use-before-define": [2, "nofunc"], // disallow use of variables before they are defined
     "use-isnan": 2, // disallow comparisons with the value NaN
-    "valid-jsdoc": ["warn", {
+    "valid-jsdoc": [1, {
       "requireReturn": false,
       "requireReturnDescription": false,
       "requireReturnType": false,
