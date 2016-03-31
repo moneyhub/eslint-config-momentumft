@@ -1,6 +1,6 @@
 {
   "name": "@mft/eslint-config-momentumft",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Our ESLint configuration",
   "main": "index.js",
   "scripts": {
