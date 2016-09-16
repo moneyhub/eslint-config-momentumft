@@ -133,6 +133,7 @@ module.exports = {
     "indent": [2, 2], // specify tab or space width for your code
     "jsx-quotes": [2, "prefer-double"], // specify whether double or single quotes should be used in JSX attributes
     "key-spacing": 2, // enforce spacing between keys and values in object literal properties
+    "keyword-spacing": 2, // require a space after certain keywords
     "linebreak-style": [2, "unix"], // disallow mixed 'LF' and 'CRLF' as linebreaks
     "lines-around-comment": 2, // enforce empty lines around comments
     "max-depth": 0, // specify the maximum depth that blocks can be nested
@@ -172,7 +173,6 @@ module.exports = {
     "semi": [2, "never"], // require or disallow use of semicolons instead of ASI
     "semi-spacing": 0, // enforce spacing before and after semicolons
     "sort-vars": 2, // sort variables within the same declaration block
-    "space-after-keywords": 2, // require a space after certain keywords
     "space-before-blocks": 2, // space-before-blocks
     "space-before-function-paren": [2, "never"], // require or disallow a space before function opening parenthesis
     "space-before-keywords": 0, // require a space before certain keywords
