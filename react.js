@@ -26,7 +26,6 @@ module.exports = {
     "react/jsx-no-bind": 0, // Prevent usage of .bind() and arrow functions in JSX props
     "react/jsx-no-duplicate-props": 0, // Prevent duplicate props in JSX
     "react/jsx-no-literals": 0, // Prevent usage of unwrapped JSX strings
-    "react/jsx-no-undef": 0, // Disallow undeclared variables in JSX
     "react/jsx-no-undef": 2, // Disallow undeclared variables in JSX
     "react/jsx-pascal-case": 0, // Enforce PascalCase for user-defined JSX components
     "react/jsx-quotes": 0, // Enforce quote style for JSX attributes
@@ -34,14 +33,14 @@ module.exports = {
     "react/jsx-sort-props": 0, // Enforce props alphabetical sorting
     "react/jsx-space-before-closing": 0, // Validate spacing before closing bracket in JSX (fixable)
     "react/jsx-uses-react": 2, // Prevent React to be incorrectly marked as unused
-    "react/jsx-uses-vars": 0, // Prevent variables used in JSX to be incorrectly marked as unused
+    "react/jsx-uses-vars": 2, // Prevent variables used in JSX to be incorrectly marked as unused
     "react/no-danger": 0, // Prevent usage of dangerous JSX properties
     "react/no-deprecated": 0, // Prevent usage of deprecated methods
     "react/no-did-mount-set-state": 2, // Prevent usage of setState in componentDidMount
     "react/no-did-update-set-state": 2, // Prevent usage of setState in componentDidUpdate
     "react/no-direct-mutation-state": 0, // Prevent direct mutation of this.state
     "react/no-is-mounted": 0, // Prevent usage of isMounted
-    "react/no-multi-comp": 2, // Prevent multiple component definition per file
+    "react/no-multi-comp": [2, { ignoreStateless: true }], // Prevent multiple component definition per file
     "react/no-set-state": 0, // Prevent usage of setState
     "react/no-string-refs": 0, // Prevent using string references in ref attribute.
     "react/no-unknown-property": 2, // Prevent usage of unknown DOM property (fixable)
@@ -51,6 +50,6 @@ module.exports = {
     "react/require-extension": 0, // Restrict file extensions that may be required
     "react/self-closing-comp": 2, // Prevent extra closing tags for components without children
     "react/sort-comp": 0, // Enforce component methods order
-    "react/wrap-multilines": 2, // Prevent missing parentheses around multilines JSX (fixable)
+    "react/jsx-wrap-multilines": 2, // Prevent missing parentheses around multilines JSX (fixable)
   }
 }
