@@ -34,7 +34,7 @@ module.exports = {
     "no-ex-assign": 2, // disallow assigning to the exception in a catch block
     "no-extra-boolean-cast": 2, // disallow double-negation boolean casts in a boolean context
     "no-extra-parens": [2, "functions"], // disallow unnecessary parentheses
-    "no-extra-semi": 0, // disallow unnecessary semicolons
+    "no-extra-semi": 2, // disallow unnecessary semicolons
     "no-func-assign": 2, // disallow overwriting functions written as function declarations
     "no-inner-declarations": [2, "functions"], // disallow function or variable declarations in nested blocks
     "no-invalid-regexp": 0, // disallow invalid regular expression strings in the RegExp constructor
@@ -99,7 +99,7 @@ module.exports = {
     "no-param-reassign": 0, // disallow reassignment of function parameters
     "no-process-env": 0, // disallow use of process.env
     "no-proto": 0, // disallow usage of __proto__ property
-    "no-redeclare": 0, // disallow declaring the same variable more than once
+    "no-redeclare": 2, // disallow declaring the same variable more than once
     "no-return-assign": 0, // disallow use of assignment in return statement
     "no-script-url": 0, // disallow use of javascript: urls.
     "no-self-compare": 0, // disallow comparisons where both sides are exactly the same
@@ -149,7 +149,7 @@ module.exports = {
     "no-continue": 0, // disallow use of the continue statement
     "no-inline-comments": 0, // disallow comments inline after code
     "no-lonely-if": 0, // disallow if as the only statement in an else block
-    "no-mixed-spaces-and-tabs": 0, // disallow mixed spaces and tabs for indentation
+    "no-mixed-spaces-and-tabs": 2, // disallow mixed spaces and tabs for indentation
     "no-multiple-empty-lines": [1, { "max": 3 }], // disallow multiple empty lines
     "no-negated-condition": 0, // disallow negated conditions
     "no-nested-ternary": 2, // disallow nested ternary expressions
@@ -158,8 +158,7 @@ module.exports = {
     "no-restricted-syntax": 0, // disallow use of certain syntax in code
     "no-spaced-func": 0, // disallow space between function identifier and application
     "no-ternary": 0, // disallow the use of ternary operators
-    "no-trailing-spaces": 0, // disallow trailing whitespace at the end of lines
-    "no-underscore-dangle": 0, // disallow dangling underscores in identifiers
+    "no-trailing-spaces": 2, // disallow trailing whitespace at the end of lines
     "no-underscore-dangle": 0, // disallow dangling underscores in identifiers
     "no-unneeded-ternary": 2, // disallow the use of ternary operators when a simpler alternative exists
     "object-curly-spacing": 0, // require or disallow padding inside curly braces
