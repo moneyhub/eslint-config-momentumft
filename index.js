@@ -1,15 +1,14 @@
 module.exports = {
-  "parser": "babel-eslint",
-
   "env": {
     "browser": true,
     "mocha": true,
-    "node": true
+    "node": true,
+    "es6": true
   },
 
-  "plugins": [
-    "babel"
-  ],
+  "parserOptions": {
+    "ecmaVersion": 8 // or 2017
+   },
 
   "rules": {
 
@@ -201,15 +200,5 @@ module.exports = {
     "prefer-spread": 0, // suggest using the spread operator instead of .apply().
     "prefer-template": 0, // suggest using template literals instead of strings concatenation
     "require-yield": 0, // disallow generator functions that do not have yield
-
-    // Plugins
-    // Babel
-    "babel/array-bracket-spacing": 0,
-    "babel/arrow-parens": 0,
-    "babel/generator-star-spacing": 0,
-    "babel/new-cap": 0,
-    "babel/no-await-in-loop": 0,
-    "babel/object-curly-spacing": 0,
-    "babel/object-shorthand": 2,
   }
 }
