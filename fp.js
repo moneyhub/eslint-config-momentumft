@@ -27,5 +27,6 @@ module.exports = {
     "no-magic-numbers": [2, {  "ignore": [0,1] }],
     "no-unused-expressions": 2, // disallow usage of expressions in statement position   
     "no-lonely-if": 2, // disallow if as the only statement in an else block    
+    "sort-keys": [1, "asc", {"caseSensitive": true, "natural": false}],    
   },
 }
