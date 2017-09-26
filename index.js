@@ -10,6 +10,10 @@ module.exports = {
     "ecmaVersion": 8 // or 2017
    },
 
+  "extends": [
+    "eslint:recommended"
+   ],
+
   "rules": {
 
     // Separate the rules into blocks based on what plugin they come from.
@@ -21,10 +25,10 @@ module.exports = {
     // Possible Errors
     "comma-dangle": [2, "always-multiline"], // disallow or enforce trailing commas
     "no-cond-assign": 2, // disallow assignment in conditional expressions
-    "no-console": 0, // disallow use of console in the node environment
+    "no-console": 1, // disallow use of console in the node environment
     "no-constant-condition": 2, // disallow use of constant expressions in conditions
-    "no-control-regex": 0, // disallow control characters in regular expressions
-    "no-debugger": 0, // disallow use of debugger
+    "no-control-regex": 2, // disallow control characters in regular expressions
+    "no-debugger": 1, // disallow use of debugger
     "no-dupe-args": 2, // disallow duplicate arguments in functions
     "no-dupe-keys": 2, // disallow duplicate keys when creating object literals
     "no-duplicate-case": 2, // disallow a duplicate case label
@@ -41,7 +45,7 @@ module.exports = {
     "no-negated-in-lhs": 0, // disallow negation of the left operand of an in expression
     "no-obj-calls": 2, // disallow the use of object properties of the global object (Math and JSON) as functions
     "no-regex-spaces": 0, // disallow multiple spaces in a regular expression literal
-    "no-sparse-arrays": 0, // disallow sparse arrays
+    "no-sparse-arrays": 1, // disallow sparse arrays
     "no-undef": 2, // disallow use of undeclared variables unless mentioned in a /*global */ block
     "no-unexpected-multiline": 2, // avoid code that looks like two expressions but is actually one
     "no-unreachable": 2, // disallow unreachable statements after a return, throw, continue, or break statement
@@ -61,56 +65,55 @@ module.exports = {
     "complexity": [2, 7], // specify the maximum cyclomatic complexity allowed in a program
     "consistent-return": 2, // require return statements to either always or never specify values
     "curly": 0, // specify curly brace conventions for all control statements
-    "default-case": 0, // require default case in switch statements
+    "default-case": 2, // require default case in switch statements
     "dot-location": 0, // enforces consistent newlines before or after dots
     "dot-notation": 2, // encourages use of dot notation whenever possible
     "eqeqeq": [2, "smart"], // require the use of === and !==
     "guard-for-in": 0, // make sure for-in loops have an if statement
-    "no-alert": 0, // disallow the use of alert, confirm, and prompt
-    "no-caller": 0, // disallow use of arguments.caller or arguments.callee
+    "no-alert": 1, // disallow the use of alert, confirm, and prompt
+    "no-caller": 1, // disallow use of arguments.caller or arguments.callee
     "no-case-declarations": 0, // disallow lexical declarations in case clauses
     "no-div-regex": 0, // disallow division operators explicitly at beginning of regular expression
     "no-else-return": 2, // disallow else after a return in an if
     "no-empty-label": 0, // disallow use of labels for anything other than loops and switches
     "no-empty-pattern": 0, // disallow use of empty destructuring patterns
     "no-eq-null": 0, // disallow comparisons to null without a type-checking operator
-    "no-eval": 0, // disallow use of eval()
-    "no-extend-native": 0, // disallow adding to native types
+    "no-eval": 2, // disallow use of eval()
+    "no-extend-native": 2, // disallow adding to native types
     "no-extra-bind": 2, // disallow unnecessary function binding
-    "no-fallthrough": 0, // disallow fallthrough of case statements
+    "no-fallthrough": 2, // disallow fallthrough of case statements
     "no-floating-decimal": 0, // disallow the use of leading or trailing decimal points in numeric literals
     "no-implicit-coercion": 0, // disallow the type conversions with shorter notations
-    "no-implied-eval": 0, // disallow use of eval()-like methods
+    "no-implied-eval": 2, // disallow use of eval()-like methods
     "no-invalid-this": 0, // disallow this keywords outside of classes or class-like objects
-    "no-iterator": 0, // disallow usage of __iterator__ property
+    "no-iterator": 1, // disallow usage of __iterator__ property
     "no-labels": 0, // disallow use of labeled statements
     "no-lone-blocks": 2, // disallow unnecessary nested blocks
-    "no-loop-func": 0, // disallow creation of functions within loops
-    "no-magic-numbers ": 0, // isallow the use of magic numbers
+    "no-loop-func": 2, // disallow creation of functions within loops
+    "no-magic-numbers": 0, // isallow the use of magic numbers
     "no-multi-spaces": 0, // disallow use of multiple spaces
     "no-multi-str": 0, // disallow use of multiline strings
-    "no-native-reassign": 0, // disallow reassignments of native objects
-    "no-new": 0, // disallow use of the new operator when not part of an assignment or comparison
-    "no-new-func": 0, // disallow use of new operator for Function object
-    "no-new-wrappers": 0, // disallows creating new instances of String,Number, and Boolean
+    "no-native-reassign": 2, // disallow reassignments of native objects
+    "no-new": 1, // disallow use of the new operator when not part of an assignment or comparison
+    "no-new-func": 1, // disallow use of new operator for Function object
+    "no-new-wrappers": 1, // disallows creating new instances of String,Number, and Boolean
     "no-octal": 0, // disallow use of octal literals
     "no-octal-escape": 0, // disallow use of octal escape sequences in string literals, such as var foo = "Copyright \251";
-    "no-param-reassign": 0, // disallow reassignment of function parameters
+    "no-param-reassign": 1, // disallow reassignment of function parameters
     "no-process-env": 0, // disallow use of process.env
-    "no-proto": 0, // disallow usage of __proto__ property
+    "no-proto": 2, // disallow usage of __proto__ property
     "no-redeclare": 2, // disallow declaring the same variable more than once
     "no-return-assign": 0, // disallow use of assignment in return statement
     "no-script-url": 0, // disallow use of javascript: urls.
-    "no-self-compare": 0, // disallow comparisons where both sides are exactly the same
-    "no-sequences": 0, // disallow use of the comma operator
-    "no-throw-literal": 0, // restrict what can be thrown as an exception
-    "no-unused-expressions": 0, // disallow usage of expressions in statement position
-    "no-useless-call": 0, // disallow unnecessary .call() and .apply()
-    "no-useless-concat": 0, // disallow unnecessary concatenation of literals or template literals
-    "no-void": 0, // disallow use of the void operator
+    "no-self-compare": 2, // disallow comparisons where both sides are exactly the same
+    "no-sequences": 2, // disallow use of the comma operator
+    "no-throw-literal": 2, // restrict what can be thrown as an exception
+    "no-useless-call": 2, // disallow unnecessary .call() and .apply()
+    "no-useless-concat": 1, // disallow unnecessary concatenation of literals or template literals
+    "no-void": 1, // disallow use of the void operator
     "no-warning-comments": 0, // disallow usage of configurable warning terms in comments - e.g. TODO or FIXME
-    "no-with": 0, // disallow use of the with statement
-    "radix": 0, // require use of the second argument for parseInt()
+    "no-with": 2, // disallow use of the with statement
+    "radix": 2, // require use of the second argument for parseInt()
     "vars-on-top": 0, // require declaration of all vars at the top of their containing scope
     "wrap-iife": 0, // require immediate function invocation to be wrapped in parentheses
     "yoda": 0, // require or disallow Yoda conditions
@@ -138,12 +141,12 @@ module.exports = {
     "max-depth": 0, // specify the maximum depth that blocks can be nested
     "max-len": 0, // specify the maximum length of a line in your program
     "max-nested-callbacks": [2, 3], // specify the maximum depth callbacks can be nested
-    "max-params": 0, // limits the number of parameters that can be used in the function declaration.
-    "max-statements": 0, // specify the maximum number of statement allowed in a function
+    "max-params": [1, {max:4}], // limits the number of parameters that can be used in the function declaration.
+    "max-statements": [1, {max:15}], // specify the maximum number of statement allowed in a function
     "new-cap": [2, { "capIsNew": false }], // require a capital letter for constructors
     "new-parens": 2, // disallow the omission of parentheses when invoking a constructor with no arguments
     "newline-after-var": 0, // require or disallow an empty newline after variable declarations
-    "no-array-constructor": 0, // disallow use of the Array constructor
+    "no-array-constructor": 1, // disallow use of the Array constructor
     "no-bitwise": 0, // disallow use of bitwise operators
     "no-continue": 0, // disallow use of the continue statement
     "no-inline-comments": 0, // disallow comments inline after code
@@ -152,14 +155,15 @@ module.exports = {
     "no-multiple-empty-lines": [1, { "max": 3 }], // disallow multiple empty lines
     "no-negated-condition": 0, // disallow negated conditions
     "no-nested-ternary": 2, // disallow nested ternary expressions
-    "no-new-object": 0, // disallow the use of the Object constructor
-    "no-plusplus": 0, // disallow use of unary operators, ++ and --
+    "no-new-object": 1, // disallow the use of the Object constructor
+    "no-plusplus": 1, // disallow use of unary operators, ++ and --
     "no-restricted-syntax": 0, // disallow use of certain syntax in code
     "no-spaced-func": 0, // disallow space between function identifier and application
     "no-ternary": 0, // disallow the use of ternary operators
     "no-trailing-spaces": 2, // disallow trailing whitespace at the end of lines
     "no-underscore-dangle": 0, // disallow dangling underscores in identifiers
     "no-unneeded-ternary": 2, // disallow the use of ternary operators when a simpler alternative exists
+    "no-useless-escape":1,
     "object-curly-spacing": [2, "never"], // require or disallow padding inside curly braces
     "one-var": 0, // require or disallow one variable declaration per function
     "operator-assignment": 0, // require assignment operator shorthand where possible or prohibit it entirely
@@ -171,8 +175,16 @@ module.exports = {
     "semi": [2, "never"], // require or disallow use of semicolons instead of ASI
     "semi-spacing": 0, // enforce spacing before and after semicolons
     "sort-vars": 2, // sort variables within the same declaration block
+    "sort-keys": [0, "asc", {"caseSensitive": true, "natural": false}],
     "space-before-blocks": 2, // space-before-blocks
-    "space-before-function-paren": [2, "never"], // require or disallow a space before function opening parenthesis
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "never",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ], // require or disallow a space before function opening parenthesis
     "space-before-keywords": 0, // require a space before certain keywords
     "space-in-parens": [2, "never"], // require or disallow spaces inside parentheses
     "space-infix-ops": 2, // require spaces around operators
