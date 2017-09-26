@@ -1,12 +1,20 @@
 module.exports = {
-  "extends": "./index.js",
+  "extends": [
+    "plugin:react/recommended",
+    "./index.js",
+  ],
 
   "plugins": [
     "react"
   ],
 
-  "ecmaFeatures": {
-    "jsx": true
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
   },
 
   // Plugins
@@ -51,5 +59,6 @@ module.exports = {
     "react/self-closing-comp": 2, // Prevent extra closing tags for components without children
     "react/sort-comp": 0, // Enforce component methods order
     "react/jsx-wrap-multilines": 2, // Prevent missing parentheses around multilines JSX (fixable)
+    "react/no-children-prop":0
   }
 }
