@@ -25,7 +25,7 @@ module.exports = {
     // Possible Errors
     "comma-dangle": [2, "always-multiline"], // disallow or enforce trailing commas
     "no-cond-assign": 2, // disallow assignment in conditional expressions
-    "no-console": 1, // disallow use of console in the node environment
+    "no-console": 0, // disallow use of console in the node environment
     "no-constant-condition": 2, // disallow use of constant expressions in conditions
     "no-control-regex": 2, // disallow control characters in regular expressions
     "no-debugger": 1, // disallow use of debugger
@@ -163,7 +163,7 @@ module.exports = {
     "no-trailing-spaces": 2, // disallow trailing whitespace at the end of lines
     "no-underscore-dangle": 0, // disallow dangling underscores in identifiers
     "no-unneeded-ternary": 2, // disallow the use of ternary operators when a simpler alternative exists
-    "no-useless-escape":1,
+    "no-useless-escape": 0,
     "object-curly-spacing": [2, "never"], // require or disallow padding inside curly braces
     "one-var": 0, // require or disallow one variable declaration per function
     "operator-assignment": 0, // require assignment operator shorthand where possible or prohibit it entirely
