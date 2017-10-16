@@ -201,7 +201,7 @@ module.exports = {
     "generator-star-spacing": 0, // enforce spacing around the * in generator functions
     "no-arrow-condition": 0, // disallow arrow functions where a condition is expected
     "no-class-assign": 0, // disallow modifying variables of class declarations
-    "no-const-assign": 0, // disallow modifying variables that are declared using const
+    "no-const-assign": 2, // disallow modifying variables that are declared using const
     "no-dupe-class-members": 0, // disallow duplicate name in class members
     "no-this-before-super": 2, // disallow use of this/super before calling super() in constructors.
     "no-var": 2, // require let or const instead of var
