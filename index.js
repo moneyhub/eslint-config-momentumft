@@ -62,7 +62,7 @@ module.exports = {
     // Best Practices
     "accessor-pairs": 2, // Enforces getter/setter pairs in objects
     "block-scoped-var": 0, // treat var statements as if they were block scoped
-    "complexity": [2, 7], // specify the maximum cyclomatic complexity allowed in a program
+    "complexity": [2, 10], // specify the maximum cyclomatic complexity allowed in a program
     "consistent-return": 2, // require return statements to either always or never specify values
     "curly": 0, // specify curly brace conventions for all control statements
     "default-case": 2, // require default case in switch statements
