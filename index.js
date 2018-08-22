@@ -7,12 +7,12 @@ module.exports = {
   },
 
   "parserOptions": {
-    "ecmaVersion": 8 // or 2017
-   },
+    "ecmaVersion": 2018
+  },
 
   "extends": [
     "eslint:recommended"
-   ],
+  ],
 
   "rules": {
 

@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/momentumft/eslint-config-momentumft#readme",
   "peerDependencies": {
-    "eslint": "^4.6.1"
+    "eslint": "^5.4.0"
   }
 }
