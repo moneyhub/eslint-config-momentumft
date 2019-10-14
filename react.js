@@ -1,24 +1,19 @@
 module.exports = {
-  "extends": [
-    "plugin:react/recommended",
-    "./index.js",
-  ],
+  extends: ["plugin:react/recommended", "./index.js"],
 
-  "plugins": [
-    "react"
-  ],
+  plugins: ["react", "react-hooks"],
 
-  "parserOptions": {
-    "ecmaVersion": 2018,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true,
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: "module",
+    ecmaFeatures: {
+      jsx: true
     }
   },
 
   // Plugins
   // React
-  "rules": {
+  rules: {
     "react/display-name": 0, // Prevent missing displayName in a React component definition
     "react/forbid-prop-types": 0, // Forbid certain propTypes
     "react/jsx-boolean-value": 0, // Enforce boolean attributes notation in JSX (fixable)
@@ -58,6 +53,8 @@ module.exports = {
     "react/self-closing-comp": 2, // Prevent extra closing tags for components without children
     "react/sort-comp": 0, // Enforce component methods order
     "react/jsx-wrap-multilines": 2, // Prevent missing parentheses around multilines JSX (fixable)
-    "react/no-children-prop":0
+    "react/no-children-prop": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
-}
+};

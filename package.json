@@ -22,5 +22,8 @@
   "homepage": "https://github.com/momentumft/eslint-config-momentumft#readme",
   "peerDependencies": {
     "eslint": "^5.4.0"
+  },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^2.1.2"
   }
 }
