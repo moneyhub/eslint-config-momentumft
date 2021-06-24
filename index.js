@@ -212,5 +212,17 @@ module.exports = {
     "prefer-spread": 0, // suggest using the spread operator instead of .apply().
     "prefer-template": 0, // suggest using template literals instead of strings concatenation
     "require-yield": 0, // disallow generator functions that do not have yield
+
+    // Variables
+    "no-delete-var": 2, // disallow deleting variables
+    "no-label-var": 2, // disallow labels that share a name with a variable
+    "no-restricted-globals": [2, "event", "fdescribe"], // disallow specified global variables
+    "no-shadow": 2, //	disallow variable declarations from shadowing variables declared in the outer scope
+    "no-shadow-restricted-names": 2, // disallow identifiers from shadowing restricted names
+    "no-undef": 2, // disallow the use of undeclared variables unless mentioned in `/*global */` comments
+    "no-undef-init": 2, // disallow initializing variables to `undefined`
+    "no-undefined": 2, // disallow the use of `undefined` as an identifier
+    "no-use-before-define": 2,//disallow the use of variables before they are defined
+
   }
 }
