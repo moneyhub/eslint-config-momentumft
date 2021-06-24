@@ -9,10 +9,9 @@ module.exports = {
   "parserOptions": {
     "ecmaVersion": 2018
   },
+  "plugins": ["mocha","promise","security-node"],
 
-  "extends": [
-    "eslint:recommended"
-  ],
+  "extends": ["eslint:recommended","plugin:mocha/recommended","plugin:promise/recommended","plugin:security-node/recommended"],
 
   "rules": {
 

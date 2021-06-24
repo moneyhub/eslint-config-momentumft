@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["plugin:react/recommended", "./index.js"],
+  extends: ["plugin:react/recommended"],
 
   plugins: ["react", "react-hooks"],
 

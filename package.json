@@ -1,10 +1,12 @@
 {
   "name": "@mft/eslint-config-momentumft",
-  "version": "5.1.0",
+  "version": "6.0.0",
   "description": "Our ESLint configuration",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npx npm-force-resolutions",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -21,9 +23,29 @@
   },
   "homepage": "https://github.com/momentumft/eslint-config-momentumft#readme",
   "peerDependencies": {
-    "eslint": "^7.29.0"
+    "eslint": "^7.x",
+    "eslint-plugin-fp": "^2.x",
+    "eslint-plugin-json": "^3.x",
+    "eslint-plugin-mocha": "^9.x",
+    "eslint-plugin-promise": "^5.x",
+    "eslint-plugin-react-hooks": "^4.x",
+    "eslint-plugin-security-node": "^1.x"
+  },
+  "peerDependenciesMeta": {
+    "eslint-plugin-fp": {
+      "optional": true
+    },
+    "eslint-plugin-json": {
+      "optional": true
+    },
+    "eslint-plugin-react-hooks": {
+      "optional": true
+    }
   },
   "devDependencies": {
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "standard-version": "^9.3.0"
+  },
+  "resolutions": {
+    "trim-newlines": "^3.0.1"
   }
 }
