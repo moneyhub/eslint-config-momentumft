@@ -215,6 +215,7 @@ module.exports = {
     // Variables
     "no-delete-var": 2, // disallow deleting variables
     "no-label-var": 2, // disallow labels that share a name with a variable
+    "no-global-assign": 2, // Disallow assignment to native objects or read-only global variables
     "no-restricted-globals": [2, "event", "fdescribe"], // disallow specified global variables
     "no-shadow": 2, //	disallow variable declarations from shadowing variables declared in the outer scope
     "no-shadow-restricted-names": 2, // disallow identifiers from shadowing restricted names
