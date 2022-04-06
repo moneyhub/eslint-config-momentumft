@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/momentumft/eslint-config-momentumft#readme",
   "peerDependencies": {
-    "eslint": "^7.x",
+    "eslint": "^8.x",
     "eslint-plugin-fp": "^2.x",
     "eslint-plugin-json": "^3.x",
     "eslint-plugin-mocha": "^10.x",
