@@ -33,7 +33,7 @@ module.exports = {
     // Possible Errors
     "comma-dangle": ["error", "always-multiline"], // disallow or enforce trailing commas
     "no-cond-assign": "error", // disallow assignment in conditional expressions
-    "no-console": "off", // disallow use of console in the node environment
+    "no-console": "error", // disallow use of console in the node environment
     "no-constant-condition": "error", // disallow use of constant expressions in conditions
     "no-control-regex": "error", // disallow control characters in regular expressions
     "no-debugger": "warn", // disallow use of debugger
@@ -230,6 +230,22 @@ module.exports = {
     "no-shadow-restricted-names": "error", // disallow identifiers from shadowing restricted names
     "no-undef": "error", // disallow the use of undeclared variables unless mentioned in `/*global */` comments
     "no-undef-init": "error", // disallow initializing variables to `undefined`
-    "no-use-before-define": "error",//disallow the use of variables before they are defined
-  }
+
+    // Promise
+    "promise/no-nesting": "off",
+  },
+  "overrides": [
+    {
+      "files": ["src/**/__tests__/*.js", "test/**/*"],
+      "rules": {
+        // Mocha
+        "mocha/no-mocha-arrows": "off",
+        "mocha/no-top-level-hooks": "off",
+        "mocha/no-hooks-for-single-case": "off",
+        "mocha/no-exclusive-tests": "error",
+
+        "security-node/detect-crlf": "off"
+      }
+    }
+  ]
 }
