@@ -59,13 +59,39 @@ module.exports = [
 ## TypeScript *(New)*
 We now hav introduced a common TypeScript configuration which allows you to get started quicker than before. Simply define the config below and you are on your way:
 ```js
-const typescript = require("@mft/eslint-config-momentumft/typescript")
+const {baseConfigWithFiles} = require("@mft/eslint-config-momentumft/typescript")
 const {base, testsWithFiles} = require("@mft/eslint-config-momentumft")
 
 module.exports = [
   ...base,
-  ...typescript,
+  ...baseConfigWithFiles,
   testsWithFiles,
+]
+```
+
+If you have TypeScript files that aren't in the `src` directory, then you can use the configurations `baseConfig` and `declarationConfig` that are defined within the same file, and specify the files you wish to have these applied to, as seen in the example below:
+
+```js
+const {base} = require("@mft/eslint-config-momentumft")
+const react = require("@mft/eslint-config-momentumft/react")
+const {baseConfig, declarationConfig} = require("@mft/eslint-config-momentumft/typescript")
+
+module.exports = [
+  ...base,
+  ...react,
+  {
+    files: ["modules/**/*.{ts,tsx}"],
+    ...baseConfig
+  },
+  {
+    files: ["modules/**/*.d.ts}"],
+    ...declarationConfig
+  },
+  {
+    rules: {
+      "react/react-in-jsx-scope": "off",
+    }
+  }
 ]
 ```
 

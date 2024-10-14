@@ -1,8 +1,16 @@
 const reactPlugin = require("eslint-plugin-react")
-
+const reactHooksPlugin = require("eslint-plugin-react-hooks")
 module.exports = [
-  reactPlugin.configs.flat.recommended,
   {
+    // files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    ...reactPlugin.configs.flat.recommended,
+  },
+  {
+    // files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    plugins: {
+      react: reactPlugin,
+      'react-hooks': reactHooksPlugin,
+    },
     rules: {
       "react/display-name": "off", // Prevent missing displayName in a React component definition
       "react/forbid-prop-types": "off", // Forbid certain propTypes
