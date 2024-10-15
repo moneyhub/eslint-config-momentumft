@@ -6,6 +6,11 @@ module.exports = [
     ...reactPlugin.configs.flat.recommended,
   },
   {
+    "settings": {
+      "react": {
+        "version": "detect", // React version. "detect" automatically picks the version you have installed.
+      },
+    },
     // files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
     plugins: {
       react: reactPlugin,
