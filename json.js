@@ -1,7 +1,5 @@
-module.exports = {
-  extends: ["plugin:json/recommended"],
-
-  plugins: ["json"]
-
-}
+const json = require("eslint-plugin-json")
+module.exports = [
+  ...json.configs["recommended"]
+]
 

@@ -1,24 +1,110 @@
 # eslint-config-momentumft
 Our ESLint configuration
 
-We have four versions that can be imported, if you want to use any of the specialist modules they have to be imported seperately.
+To use this version, ensure you have `eslint` version 9 or above installed. This will install all the plugins required for you. To make use of it, define an `eslint.config.js` file in your repository with the following contents:
 
-## Our standard
-`@mft/eslint-config-momentumft`
+```js
+const {base, testsWithFiles} = require("@mft/eslint-config-momentumft")
 
-These are the company wide standards, it uses `eslint-plugin-mocha`, `eslint-plugin-promise` and `eslint-plugin-security-node`.
+module.exports = [
+  ...base,
+  ...testsWithFiles,
+]
+```
 
-## React config
-`@mft/eslint-config-momentumft/react`
+The example above is a good starting point for JavaScript based configurations with tests defined in `src/**/__tests__` and `test/` directories.
 
-If you use this config you need to make sure you have `eslint-plugin-react` installed
+If you have tests in different directories you can define the config as follows:
 
-## Super strict FP mode
-`@mft/eslint-config-momentumft/fp`
+```js
+const {base, tests} = require("@mft/eslint-config-momentumft")
 
-If you use this config you need to make sure you have `eslint-plugin-fp` installed
+module.exports = [
+  ...base,
+  {
+    files: ["unit-tests/**/*.js"],
+    ...tests
+  }
+]
+```
 
-## Basic json validity
-`@mft/eslint-config-momentumft/json`
+This library is to help get you setup with ESLint config without having to manipulate the rules yourself manually. Keeping ESLint config files on your services small.
 
-If you use this config you need to make sure you have `eslint-plugin-json` installed
+Below are examples when using our other helper configurations.
+
+## React
+```js
+const {base, testsWithFiles} = require("@mft/eslint-config-momentumft")
+const reactConfig = require("@mft/eslint-config-momentumft/react")
+
+module.exports = [
+  ...base,
+  ...testsWithFiles,
+  ...reactConfig
+]
+```
+
+## JSON
+```js
+const {base, testsWithFiles} = require("@mft/eslint-config-momentumft")
+const jsonConfig = require("@mft/eslint-config-momentumft/json")
+
+module.exports = [
+  ...base,
+  ...testsWithFiles,
+  ...jsonConfig
+]
+```
+
+## TypeScript *(New)*
+We now hav introduced a common TypeScript configuration which allows you to get started quicker than before. Simply define the config below and you are on your way:
+```js
+const {baseConfigWithFiles} = require("@mft/eslint-config-momentumft/typescript")
+const {base, testsWithFiles} = require("@mft/eslint-config-momentumft")
+
+module.exports = [
+  ...base,
+  ...baseConfigWithFiles,
+  testsWithFiles,
+]
+```
+
+If you have TypeScript files that aren't in the `src` directory, then you can use the configurations `baseConfig` and `declarationConfig` that are defined within the same file, and specify the files you wish to have these applied to, as seen in the example below:
+
+```js
+const {base} = require("@mft/eslint-config-momentumft")
+const react = require("@mft/eslint-config-momentumft/react")
+const {baseConfig, declarationConfig} = require("@mft/eslint-config-momentumft/typescript")
+
+module.exports = [
+  ...base,
+  ...react,
+  {
+    files: ["modules/**/*.{ts,tsx}"],
+    ...baseConfig
+  },
+  {
+    files: ["modules/**/*.d.ts}"],
+    ...declarationConfig
+  },
+  {
+    rules: {
+      "react/react-in-jsx-scope": "off",
+    }
+  }
+]
+```
+
+
+## Functional Programming
+**NB:** The main plugin we use for this config hasn't been updated to use the new ESLint configuration, therefore the certainty of it being correct is unknown. This plugin only seems to be used by one service so may not be an issue for most.
+```js
+const {base, testsWithFiles} = require("@mft/eslint-config-momentumft")
+const fpConfig = require("@mft/eslint-config-momentumft/fp")
+
+module.exports = [
+  ...base,
+  ...testsWithFiles,
+  ...fpConfig
+]
+```
