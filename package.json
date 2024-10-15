@@ -1,6 +1,6 @@
 {
   "name": "@mft/eslint-config-momentumft",
-  "version": "11.0.0-0",
+  "version": "11.0.0",
   "description": "Our ESLint configuration",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
