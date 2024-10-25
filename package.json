@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/momentumft/eslint-config-momentumft#readme",
   "dependencies": {
-    "@eslint/compat": "^1.1.1",
+    "@eslint/compat": "^1.2.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-jsdoc": "^50.3.1",
