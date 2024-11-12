@@ -8,7 +8,7 @@ const {base, testsWithFiles} = require("@mft/eslint-config-momentumft")
 
 module.exports = [
   ...base,
-  ...testsWithFiles,
+  testsWithFiles,
 ]
 ```
 
