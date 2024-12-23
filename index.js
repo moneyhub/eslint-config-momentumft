@@ -276,7 +276,7 @@ const testConfig = {
 }
 
 module.exports.testsWithFiles = {
-  files: ["src/**/__tests__/*.js", "test/**/*"],
+  files: ["src/**/__tests__/**/*.{js,ts}", "test/**/*.{js,ts}"],
   ...testConfig
 }
 

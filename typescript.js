@@ -59,7 +59,7 @@ const declarationConfig = {
 module.exports.baseConfigWithFiles = typescriptEslint.config(
   {
     ...baseConfig,
-    "files": ["src/**/*.ts"],
+    "files": ["src/**/*.ts", "test/**/*.ts"],
   },
   {
     "files": ["src/**/*.d.ts"],
