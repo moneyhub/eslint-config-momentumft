@@ -271,7 +271,8 @@ const testConfig = {
     "mocha/no-sibling-hooks": "warn",
     "security-node/detect-crlf": "off",
     "promise/no-nesting": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "max-nested-callbacks": "off",
   }
 }
 
