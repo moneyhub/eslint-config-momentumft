@@ -1,6 +1,6 @@
 {
   "name": "@mft/eslint-config-momentumft",
-  "version": "12.0.2",
+  "version": "12.0.3",
   "description": "Moneyhub ESLint configuration",
   "bin": {
     "mh-lint": "./bin/mh-lint",
