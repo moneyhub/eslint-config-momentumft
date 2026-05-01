@@ -33,8 +33,6 @@ module.exports.plugins = {
 module.exports.configs = {
   /** Flat config object; spread into your `eslint.config.js` array. */
   prettierFlat: require("eslint-config-prettier/flat"),
-  /** Legacy ESLintRC object; use with `@eslint/eslintrc` `FlatCompat` if you use flat config. */
-  standard: require("eslint-config-standard"),
   /** `eslint-config-prettier` rule metadata (for tooling); prefer `prettierFlat` in flat configs. */
   prettier: require("eslint-config-prettier"),
 };
