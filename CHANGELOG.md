@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v12.0.0
+**ESLint** and the other npm packages this shareable configuration relies on (ESLint plugins, shareable configs, parsers, and related tooling) are now **dependencies** of `@mft/eslint-config-momentumft`. Consuming projects **no longer need to install those packages separately**; installing this library is enough for the bundled `mh-lint` CLI and for loading the shared configuration.
+
 ## v11.0.0
 Major upgrade to use ESLint version 9. This new version of ESLint changes the way config is organised. The new method makes it much easier to share and extend config, therefore making this library easier to use.
 

@@ -2,6 +2,10 @@
   "name": "@mft/eslint-config-momentumft",
   "version": "11.0.2",
   "description": "Moneyhub ESLint configuration",
+  "bin": {
+    "mh-lint": "./bin/mh-lint",
+    "mh-lint:fix": "./bin/mh-lint-fix"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "release": "standard-version"
@@ -20,25 +24,46 @@
     "url": "https://github.com/moneyhub/eslint-config-momentumft/issues"
   },
   "homepage": "https://github.com/moneyhub/eslint-config-momentumft#readme",
+  "exports": {
+    ".": "./index.js",
+    "./plugins": "./plugins.js",
+    "./react": "./react.js",
+    "./json": "./json.js",
+    "./typescript": "./typescript.js",
+    "./fp": "./fp.js"
+  },
   "dependencies": {
     "@eslint/compat": "^1.1.1",
-    "eslint-config-prettier": "^9.1.0",
+    "eslint": "^10.3.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-chai-friendly": "^1.2.0",
+    "eslint-plugin-cypress": "^6.4.0",
+    "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-fp": "^2.3.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jest": "^29.15.2",
     "eslint-plugin-jsdoc": "^50.3.1",
     "eslint-plugin-json": "^4.0.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-mocha": "^10.5.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-promise": "^7.1.0",
-    "eslint-plugin-react": "^7.37.1",
-    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-no-only-tests": "^3.4.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-playwright": "^2.10.2",
+    "eslint-plugin-prettier": "^5.5.5",
+    "eslint-plugin-promise": "^7.3.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-security-node": "^1.1.4",
     "globals": "^15.10.0",
     "typescript-eslint": "^8.8.0"
   },
-  "peerDependencies": {
-    "eslint": ">=9"
-  },
   "overrides": {
+    "eslint-config-standard": {
+      "eslint": "$eslint",
+      "eslint-plugin-promise": "$eslint-plugin-promise"
+    },
     "eslint-plugin-react-hooks": {
       "eslint": "$eslint"
     }

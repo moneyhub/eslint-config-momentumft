@@ -4,6 +4,7 @@ const json = require("eslint-plugin-json")
 const jsdoc = require("eslint-plugin-jsdoc")
 const securityNode = require("eslint-plugin-security-node")
 const {browser, mocha, node, es2024} = require("globals")
+const {plugins, configs} = require("./plugins")
 
 module.exports.base = [
   jsdoc.configs['flat/recommended'],
@@ -282,3 +283,6 @@ module.exports.testsWithFiles = {
 }
 
 module.exports.tests = testConfig
+
+module.exports.configs = configs
+module.exports.plugins = plugins
