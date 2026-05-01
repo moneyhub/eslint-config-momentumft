@@ -33,7 +33,7 @@
     "./fp": "./fp.js"
   },
   "dependencies": {
-    "@eslint/compat": "^1.1.1",
+    "@eslint/compat": "^2.0.5",
     "eslint": "^10.3.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-config-standard": "^17.1.0",
