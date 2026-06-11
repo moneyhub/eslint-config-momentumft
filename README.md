@@ -103,6 +103,8 @@ module.exports = [
 
 That setup suits JavaScript projects with tests under `src/**/__tests__/**` and `test/**`.
 
+`base` applies `eslint-plugin-jsdoc` **`flat/recommended`** to JavaScript (including `.jsx`) and **`flat/recommended-typescript`** to TypeScript (including `.tsx`). The TypeScript preset disables `jsdoc/no-undefined-types` and other redundant type rules, since the TypeScript compiler already validates types.
+
 If tests live elsewhere:
 
 ```js

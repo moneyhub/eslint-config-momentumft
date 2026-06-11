@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [Unreleased]
+
+### Performance
+
+- Scope `eslint-plugin-jsdoc` to `flat/recommended` on JavaScript files and `flat/recommended-typescript` on TypeScript files. Disables expensive `jsdoc/no-undefined-types` on `.ts`/`.tsx` where TypeScript already validates types.
+
 ## v12.0.0
 **ESLint** and the other npm packages this shareable configuration relies on (ESLint plugins, shareable configs, parsers, and related tooling) are now **dependencies** of `@mft/eslint-config-momentumft`. Consuming projects **no longer need to install those packages separately**; installing this library is enough for the bundled `mh-lint` CLI and for loading the shared configuration.
 

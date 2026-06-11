@@ -6,8 +6,18 @@ const securityNode = require("eslint-plugin-security-node")
 const {browser, mocha, node, es2024} = require("globals")
 const {plugins, configs} = require("./plugins")
 
+const javascriptFiles = ["**/*.{js,cjs,mjs,jsx}"]
+const typescriptFiles = ["**/*.{ts,tsx}"]
+
 module.exports.base = [
-  jsdoc.configs['flat/recommended'],
+  {
+    ...jsdoc.configs["flat/recommended"],
+    files: javascriptFiles,
+  },
+  {
+    ...jsdoc.configs["flat/recommended-typescript"],
+    files: typescriptFiles,
+  },
   {
     plugins: {
       mocha: mochaPlugin,
