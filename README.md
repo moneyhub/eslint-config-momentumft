@@ -53,6 +53,8 @@ Published **subpath exports** (see `package.json`):
 | `@mft/eslint-config-momentumft/json` | JSON linting. |
 | `@mft/eslint-config-momentumft/typescript` | TypeScript-aware blocks. |
 | `@mft/eslint-config-momentumft/fp` | Functional programming rules. |
+| `@mft/eslint-config-momentumft/url` | Outbound URL templating lint (opt-in). |
+| `@mft/eslint-config-momentumft/url/selectors` | `no-restricted-syntax` selectors only (for merging). |
 
 ## Bundled plugins and configs (`/plugins`)
 
@@ -181,6 +183,39 @@ module.exports = [
   {
     rules: {
       "react/react-in-jsx-scope": "off",
+    },
+  },
+]
+```
+
+## Outbound URL templating (opt-in)
+
+Services that use `@mft/mh-request/url` should wrap outbound request URLs in the `URL` tagged template (or `untemplated()` for bank-supplied links) so request logs redact path and query values. Enable the rule with the `./url` subpath:
+
+```js
+const {base, testsWithFiles} = require("@mft/eslint-config-momentumft")
+const urlConfig = require("@mft/eslint-config-momentumft/url")
+
+module.exports = [
+  ...base,
+  ...testsWithFiles,
+  ...urlConfig.map(block => ({
+    ...block,
+    files: ["src/**/*.ts"],
+  })),
+]
+```
+
+If you already use `no-restricted-syntax` elsewhere, merge the selectors instead of spreading `url` (ESLint replaces the whole rule value per config object):
+
+```js
+const outboundUrlSelectors = require("@mft/eslint-config-momentumft/url/selectors")
+
+module.exports = [
+  {
+    files: ["src/**/*.ts"],
+    rules: {
+      "no-restricted-syntax": ["error", ...yourSelectors, ...outboundUrlSelectors],
     },
   },
 ]

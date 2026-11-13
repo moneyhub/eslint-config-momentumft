@@ -7,7 +7,7 @@
     "mh-lint:fix": "./bin/mh-lint-fix"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
+    "test": "mocha test/**/*.test.js",
     "release": "standard-version"
   },
   "repository": {
@@ -30,11 +30,18 @@
     "./react": "./react.js",
     "./json": "./json.js",
     "./typescript": "./typescript.js",
-    "./fp": "./fp.js"
+    "./fp": "./fp.js",
+    "./url": "./url.js",
+    "./url/selectors": "./rules/outbound-url-selectors.js"
+  },
+  "devDependencies": {
+    "chai": "^4.5.0",
+    "mocha": "^11.1.0",
+    "typescript": "^5.7.0"
   },
   "dependencies": {
     "@eslint/compat": "^2.0.5",
-    "eslint": "^10.0.0",
+    "eslint": "^10.3.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-chai-friendly": "^1.2.0",
     "eslint-plugin-cypress": "^6.4.0",
@@ -42,11 +49,11 @@
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jest": "^29.15.2",
-    "eslint-plugin-jsdoc": "^50.3.1",
+    "eslint-plugin-jsdoc": "^62.9.0",
     "eslint-plugin-json": "^4.0.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-mocha": "^10.5.0",
-    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-n": "^17.24.0",
     "eslint-plugin-no-only-tests": "^3.4.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-playwright": "^2.10.2",
@@ -55,19 +62,124 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-security-node": "^1.1.4",
-    "globals": "^15.10.0",
+    "globals": "^17.6.0",
     "typescript-eslint": "^8.8.0"
   },
   "peerDependencies": {
-    "eslint": "^10.0.0"
+    "eslint": "^10.3.0"
   },
   "overrides": {
     "eslint": "$eslint",
+    "*": {
+      "eslint": "$eslint"
+    },
+    "@eslint-community/eslint-utils": {
+      "eslint": "$eslint"
+    },
+    "@eslint/compat": {
+      "eslint": "$eslint"
+    },
+    "@typescript-eslint/eslint-plugin": {
+      "eslint": "$eslint"
+    },
+    "@typescript-eslint/parser": {
+      "eslint": "$eslint"
+    },
+    "@typescript-eslint/project-service": {
+      "eslint": "$eslint"
+    },
+    "@typescript-eslint/scope-manager": {
+      "eslint": "$eslint"
+    },
+    "@typescript-eslint/tsconfig-utils": {
+      "eslint": "$eslint"
+    },
+    "@typescript-eslint/type-utils": {
+      "eslint": "$eslint"
+    },
+    "@typescript-eslint/types": {
+      "eslint": "$eslint"
+    },
+    "@typescript-eslint/typescript-estree": {
+      "eslint": "$eslint"
+    },
+    "@typescript-eslint/utils": {
+      "eslint": "$eslint"
+    },
+    "@typescript-eslint/visitor-keys": {
+      "eslint": "$eslint"
+    },
+    "eslint-config-prettier": {
+      "eslint": "$eslint"
+    },
     "eslint-config-standard": {
       "eslint": "$eslint",
       "eslint-plugin-promise": "$eslint-plugin-promise"
     },
+    "eslint-plugin-chai-friendly": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-cypress": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-es": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-es-x": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-flowtype": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-fp": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-import": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-jest": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-jsdoc": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-json": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-jsx-a11y": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-mocha": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-n": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-no-only-tests": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-node": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-playwright": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-prettier": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-promise": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-react": {
+      "eslint": "$eslint"
+    },
     "eslint-plugin-react-hooks": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-security-node": {
+      "eslint": "$eslint"
+    },
+    "typescript-eslint": {
       "eslint": "$eslint"
     }
   }

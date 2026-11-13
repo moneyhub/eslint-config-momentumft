@@ -1,0 +1,30 @@
+const clients = "/^(request|got|requester)$/"
+const verbs = "/^(get|post|put|patch|delete|head)$/"
+const rawUrlArg = "/^(Literal|TemplateLiteral|BinaryExpression)$/"
+const message =
+  "Wrap outbound URLs in URL`...` (or untemplated() for bank-supplied links) so they are redacted in request logs."
+
+module.exports = [
+  {
+    selector: `CallExpression[callee.name=${clients}][arguments.0.type=${rawUrlArg}]`,
+    message,
+  },
+  {
+    selector: `CallExpression[callee.property.name=${clients}][arguments.0.type=${rawUrlArg}]`,
+    message,
+  },
+  {
+    selector: `CallExpression[callee.object.name=${clients}][callee.property.name=${verbs}][arguments.0.type=${rawUrlArg}]`,
+    message,
+  },
+  {
+    selector: `CallExpression[callee.name='put'] Property[key.name='uri'][value.type=${rawUrlArg}]`,
+    message,
+  },
+  {
+    selector:
+      "CallExpression[callee.name='trusted'][arguments.0.type=/^(TemplateLiteral|BinaryExpression)$/]",
+    message:
+      "trusted() must wrap a single config value, not a built string; interpolate IDs through URL instead.",
+  },
+]
