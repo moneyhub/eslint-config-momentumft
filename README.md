@@ -190,7 +190,7 @@ module.exports = [
 
 ## Outbound URL templating (opt-in)
 
-Services that use `@mft/mh-request/url` should build outbound request URLs with the `URL` tagged template (not raw template literals or string concatenation) so request logs can aggregate by template. Plain string URLs are allowed. Enable the rule with the `./url` subpath:
+Services that use `@mft/mh-request/url` should build outbound request URLs with the `UrlTag` tagged template (not raw template literals or string concatenation) so request logs can aggregate by template. Plain string URLs are allowed. Enable the rule with the `./url` subpath:
 
 ```js
 const {base, testsWithFiles} = require("@mft/eslint-config-momentumft")

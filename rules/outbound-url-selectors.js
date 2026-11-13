@@ -2,7 +2,7 @@ const clients = "/^(request|got|requester)$/"
 const verbs = "/^(get|post|put|patch|delete|head)$/"
 const rawUrlArg = "/^(TemplateLiteral|BinaryExpression)$/"
 const message =
-  "Build outbound URLs with the URL`...` tag rather than raw template strings or concatenation, so they can be aggregated in request logs. Plain string URLs are fine."
+  "Build outbound URLs with the UrlTag`...` tag rather than raw template strings or concatenation, so they can be aggregated in request logs. Plain string URLs are fine."
 
 module.exports = [
   {

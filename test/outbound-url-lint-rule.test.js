@@ -107,11 +107,11 @@ describe("outbound URL eslint selectors", () => {
         uri: unknown
         json: { uri: string }
       }) => void
-      declare function URL(strings: TemplateStringsArray, ...values: unknown[]): unknown
+      declare function UrlTag(strings: TemplateStringsArray, ...values: unknown[]): unknown
       declare function trusted(value: string): unknown
       const base = trusted("https://example.test/")
       put({
-        uri: URL\`\${base}/accounts\`,
+        uri: UrlTag\`\${base}/accounts\`,
         json: { uri: "https://example.test/embedded" },
       })
     `)
@@ -119,14 +119,14 @@ describe("outbound URL eslint selectors", () => {
     expect(restrictedSyntaxMessages(messages)).to.have.lengthOf(0)
   })
 
-  it("allows URL tagged templates", () => {
+  it("allows UrlTag tagged templates", () => {
     const messages = lintSource(`
       declare const request: (url: unknown) => void
-      declare function URL(strings: TemplateStringsArray, ...values: unknown[]): unknown
+      declare function UrlTag(strings: TemplateStringsArray, ...values: unknown[]): unknown
       declare function trusted(value: string): unknown
       const base = "https://example.test/"
       const id = "secret"
-      request(URL\`\${trusted(base)}/accounts/\${id}\`)
+      request(UrlTag\`\${trusted(base)}/accounts/\${id}\`)
     `)
 
     expect(restrictedSyntaxMessages(messages)).to.have.lengthOf(0)
