@@ -2,7 +2,7 @@ const {expect} = require("chai")
 const {Linter} = require("eslint")
 const tsParser = require("@typescript-eslint/parser")
 
-const {selectors: outboundUrlSelectors} = require("../url")
+const outboundUrlSelectors = require("../rules/outbound-url-selectors")
 
 const linter = new Linter({configType: "flat"})
 
@@ -46,6 +46,28 @@ describe("outbound URL eslint selectors", () => {
     expect(restrictedSyntaxMessages(messages)).to.have.lengthOf(1)
   })
 
+  it("rejects string literals passed to this.request.get", () => {
+    const messages = lintSource(`
+      declare class Client {
+        request: { get: (url: unknown) => void }
+        fetch(): void {
+          this.request.get("https://example.test/accounts")
+        }
+      }
+    `)
+
+    expect(restrictedSyntaxMessages(messages)).to.have.lengthOf(1)
+  })
+
+  it("rejects string literals passed to nested client verb calls", () => {
+    const messages = lintSource(`
+      declare const client: { got: { post: (url: unknown) => void } }
+      client.got.post("https://example.test/token")
+    `)
+
+    expect(restrictedSyntaxMessages(messages)).to.have.lengthOf(1)
+  })
+
   it("rejects binary expressions passed to got", () => {
     const messages = lintSource(`
       declare const got: (url: unknown) => void
@@ -77,6 +99,24 @@ describe("outbound URL eslint selectors", () => {
     `)
 
     expect(restrictedSyntaxMessages(messages)).to.have.lengthOf(1)
+  })
+
+  it("allows nested uri fields in put body while the request target uses URL", () => {
+    const messages = lintSource(`
+      declare const put: (options: {
+        uri: unknown
+        json: { uri: string }
+      }) => void
+      declare function URL(strings: TemplateStringsArray, ...values: unknown[]): unknown
+      declare function trusted(value: string): unknown
+      const base = trusted("https://example.test/")
+      put({
+        uri: URL\`\${base}/accounts\`,
+        json: { uri: "https://example.test/embedded" },
+      })
+    `)
+
+    expect(restrictedSyntaxMessages(messages)).to.have.lengthOf(0)
   })
 
   it("allows URL tagged templates", () => {

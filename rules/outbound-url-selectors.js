@@ -18,7 +18,11 @@ module.exports = [
     message,
   },
   {
-    selector: `CallExpression[callee.name='put'] Property[key.name='uri'][value.type=${rawUrlArg}]`,
+    selector: `CallExpression[callee.object.property.name=${clients}][callee.property.name=${verbs}][arguments.0.type=${rawUrlArg}]`,
+    message,
+  },
+  {
+    selector: `CallExpression[callee.name='put'] Property[key.name='uri'][value.type=${rawUrlArg}][parent.parent.type='CallExpression']`,
     message,
   },
   {

@@ -35,6 +35,7 @@
     "./url/selectors": "./rules/outbound-url-selectors.js"
   },
   "devDependencies": {
+    "@typescript-eslint/parser": "^8.8.0",
     "chai": "^4.5.0",
     "mocha": "^11.1.0",
     "typescript": "^5.7.0"
