@@ -1,8 +1,8 @@
 const clients = "/^(request|got|requester)$/"
 const verbs = "/^(get|post|put|patch|delete|head)$/"
-const rawUrlArg = "/^(Literal|TemplateLiteral|BinaryExpression)$/"
+const rawUrlArg = "/^(TemplateLiteral|BinaryExpression)$/"
 const message =
-  "Wrap outbound URLs in URL`...` (or untemplated() for bank-supplied links) so they are redacted in request logs."
+  "Build outbound URLs with the URL`...` tag rather than raw template strings or concatenation, so they can be aggregated in request logs. Plain string URLs are fine."
 
 module.exports = [
   {

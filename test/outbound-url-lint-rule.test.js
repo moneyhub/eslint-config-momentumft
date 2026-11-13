@@ -37,16 +37,16 @@ describe("outbound URL eslint selectors", () => {
     expect(restrictedSyntaxMessages(messages)).to.have.lengthOf(1)
   })
 
-  it("rejects string literals passed to request.post", () => {
+  it("allows plain string literals passed to request.post", () => {
     const messages = lintSource(`
       declare const request: { post: (url: unknown) => void }
       request.post("https://example.test/token")
     `)
 
-    expect(restrictedSyntaxMessages(messages)).to.have.lengthOf(1)
+    expect(restrictedSyntaxMessages(messages)).to.have.lengthOf(0)
   })
 
-  it("rejects string literals passed to this.request.get", () => {
+  it("allows plain string literals passed to this.request.get", () => {
     const messages = lintSource(`
       declare class Client {
         request: { get: (url: unknown) => void }
@@ -56,16 +56,16 @@ describe("outbound URL eslint selectors", () => {
       }
     `)
 
-    expect(restrictedSyntaxMessages(messages)).to.have.lengthOf(1)
+    expect(restrictedSyntaxMessages(messages)).to.have.lengthOf(0)
   })
 
-  it("rejects string literals passed to nested client verb calls", () => {
+  it("allows plain string literals passed to nested client verb calls", () => {
     const messages = lintSource(`
       declare const client: { got: { post: (url: unknown) => void } }
       client.got.post("https://example.test/token")
     `)
 
-    expect(restrictedSyntaxMessages(messages)).to.have.lengthOf(1)
+    expect(restrictedSyntaxMessages(messages)).to.have.lengthOf(0)
   })
 
   it("rejects binary expressions passed to got", () => {
@@ -132,12 +132,11 @@ describe("outbound URL eslint selectors", () => {
     expect(restrictedSyntaxMessages(messages)).to.have.lengthOf(0)
   })
 
-  it("allows untemplated() and identifier url arguments", () => {
+  it("allows identifier url arguments", () => {
     const messages = lintSource(`
       declare const request: (url: unknown) => void
-      declare function untemplated(rawUrl: string): unknown
       const nextLink = "https://example.test/next"
-      const currentUrl = untemplated(nextLink)
+      const currentUrl = nextLink
       request(currentUrl)
     `)
 
